@@ -1,0 +1,292 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    background-color: #000;
+    color: #FFF;
+    scroll-padding-top: 2rem;
+    scroll-behavior: smooth;
+    font-family: 'Roboto', sans-serif;
+}
+
+section {
+    padding: 12px 36px;
+}
+
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    background-color: #fff;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.header__container {
+    padding: 12px 36px;
+    display: flex;
+    justify-content: space-between;
+    background-color: #000;
+    
+}
+
+.header__logo {
+    width: 150px;
+}
+
+.header__links {
+    display: flex;
+    text-transform: uppercase;
+    align-items: center;
+}
+
+.header__links__items {
+    margin-left: 1.6rem;
+}
+
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+    padding: 10px;
+    background-color: #000;
+  }
+  
+  .bar {
+    display: block;
+    height: 2px;
+    width: 25px;
+    background-color: #FFF;
+    margin: 6px 0;
+  }
+  
+  .menu-open .header__links {
+    display: flex;
+    flex-direction: column;
+    background-color: #000;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+  }
+
+.hero {
+    justify-content: center;
+    display: flex;
+    margin-top: 36px;
+    width: 100%;
+    min-height: 100vh;
+    margin-top: 120px;
+}
+
+.hero__imagem img {
+    animation: animate 3s linear infinite;
+}
+
+@keyframes animate {
+    0% {
+        transform: translate(-10px, 0);
+    }
+    50% {
+        transform: translate(-0px, -10px);
+    }
+    100% {
+        transform: translate(-10px, 0);
+    }
+}
+
+.sinopse {
+    display: flex;
+    padding: 16px 36px;
+}
+
+.sinopse img {
+    width: 100%; /* Mudança para tornar a imagem responsiva */
+}
+
+.sinopse__text h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+}
+
+.sinopse__descrition {
+    margin-left: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.sinopse__descrition h3 {
+    font-size: 3rem;
+    margin-bottom: 16px;
+}
+
+.sinopse__descrition p {
+    font-size: 1.3rem;
+}
+
+.personagens__text h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 3rem;
+    text-transform: uppercase;
+}
+
+.personagens__imagens {
+    column-count: 3; 
+    column-gap: 0;
+}
+
+.personagens__imagens img {
+    width: 100%;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    transition: scale 350ms ease, opacity 350ms linear;
+}
+
+.personagens__imagens:has(img:hover) img:not(:hover) {
+    scale: .9;
+    opacity: .7;
+}
+
+
+.episodes__text h2{
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 3rem;
+    text-transform: uppercase;
+
+}
+
+.iframe__episodes {
+    display: flex;
+    justify-content: center;
+   
+}
+.iframe__episodes iframe {
+   width: 80%;
+   height: auto;
+}
+
+.iframe__episodes::after {
+    display: block;
+    content: "";
+    padding-top: 56.25%;
+}
+
+
+.footer{
+    margin-top: 36px;
+    text-align: center;
+    max-width: 100%;
+    height: 150px;
+    border-top: 1px solid #FFF;
+   
+}
+
+.social-icon{
+    padding: 8px;
+}
+
+.footer__links{
+    margin-top: 10px;
+}
+
+.footer__text{
+    margin-top: 16px;
+}
+
+.footer__text p{
+    font-size: 16px;
+}
+
+@media screen and (max-width: 768px) {
+
+    .hero{
+        display: none;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .header__links {
+        width: 350px;
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        align-items: end;
+        top: 60px;
+        right: 12%;
+        background-color: transparent;
+        transition: max-height 0.4s ease-out;
+        overflow: hidden;
+
+    }
+
+    .menu-open .header__links {
+        max-height: 300px; 
+    }
+
+    #sinopse{
+        margin-top: 100px;
+    }
+
+    .sinopse {
+        flex-direction: column;
+            display: flex;
+            padding: 0px 36px;
+        
+    }
+
+    .sinopse__text h2{
+        font-size: 1.5rem;
+    }
+
+    .sinopse img {
+        margin-top: 16px;
+    }
+
+
+    .sinopse__descrition {
+        margin-left: 0;
+        margin-top: 16px;
+    }
+
+    .sinopse__descrition h3{
+        margin-top: 16px;
+        font-size: 2rem;
+        text-align: center;
+    }
+
+    .sinopse__descrition p{
+        font-size: 1rem;
+        text-align: center;
+    }
+
+    .personagens__text h2{
+        font-size: 1.5rem;
+    }
+
+    .personagens__imagens {
+        column-count: 2; 
+    }
+
+    .episodes__text h2{
+        margin-top: 32px;
+        font-size: 1.5rem;
+    }
+
+    .footer__text p{
+        font-size: 12px;
+    }
+
+    .iframe__episodes iframe {
+        width: 100%;
+        height: auto;
+     }
+}
+
